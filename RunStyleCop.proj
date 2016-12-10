@@ -24,11 +24,7 @@
         <TeamCitySetStatus Status="$(AllPassed)" Text="StyleCop violations: $(StyleCopViolations)" />
 
         <TeamCityReportStatsValue Key="StyleCopViolations" Value="$(StyleCopViolations)" />
-        
-        <graph title="Style Violations" seriesTitle="Warning">
-        <valueType key="StyleCopViolations" title="Violations" buildTypeId="bt20"/>
-        </graph>
- 
+
         <Error Condition="$(StyleCopViolations) > 0" Text="There were $(StyleCopViolations) StyleCop violations." />
     </Target>
 </Project>
