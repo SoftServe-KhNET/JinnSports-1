@@ -17,9 +17,9 @@
                       CacheResults="true"
                       OverrideSettingsFile="$(teamcity_build_checkoutDir)\Settings.StyleCop" />
                        
-        <XmlRead XPath="count(//Violation)" XmlFileName="StyleCopReport.xml">
+        <StyleCopTask XPath="count(//Violation)" XmlFileName="StyleCopReport.xml">
             <Output TaskParameter="Value" PropertyName="StyleCopViolations" />
-        </XmlRead>
+        </StyleCopTask>
  
         <TeamCitySetStatus Status="$(AllPassed)" Text="StyleCop violations: $(StyleCopViolations)" />
  
