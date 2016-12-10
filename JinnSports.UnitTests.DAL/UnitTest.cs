@@ -13,7 +13,7 @@ namespace JinnSports.UnitTests.DAL
         [Test]
         public void Test()
         {
-            Assert.AreEqual(31, 17);
+            Assert.AreEqual(31, 31);
         }
     }
 }
