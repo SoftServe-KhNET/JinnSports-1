@@ -14,7 +14,6 @@
                       TreatErrorsAsWarnings="true"
                       OutputFile="StyleCopReport.xml"
                       CacheResults="true"
-                      AdditionalAddinPaths="$(ProgramFiles)\StyleCop 4.7\Andy.French.StyleCop.Rules.dll"
                       OverrideSettingsFile="$(teamcity_build_checkoutDir)\Settings.StyleCop" />
                        
         <XmlRead XPath="count(//Violation)" XmlFileName="StyleCopReport.xml">
@@ -25,6 +24,6 @@
 
         <TeamCityReportStatsValue Key="StyleCopViolations" Value="$(StyleCopViolations)" />
 
-        <Error Condition="$(StyleCopViolations) > 0" Text="There were $(StyleCopViolations) StyleCop violations." />
+        <Error Condition="$(StyleCopViolations) > 255" Text="There were $(StyleCopViolations) StyleCop violations." />
     </Target>
 </Project>
