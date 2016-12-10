@@ -4,9 +4,10 @@
     <UsingTask TaskName="StyleCopTask" AssemblyFile="$(StyleCopTasksPath)\StyleCop.dll" />
     
     <Target Name="RunStyleCop">
-        <CreateItem Include="$(teamcity_build_checkoutDir)\**\*.cs">
-            <Output TaskParameter="Include" ItemName="StyleCopFiles" />
-        </CreateItem>
+         <!-- Create a collection of files to scan -->
+  	<CreateItem Include="$(SourceFolder)\**\*.cs">
+    		<Output TaskParameter="Include" ItemName="StyleCopFiles" />
+  	</CreateItem>
  
         <StyleCopTask ProjectFullPath="$(teamcity_build_checkoutDir)"
                       SourceFiles="@(StyleCopFiles)"
